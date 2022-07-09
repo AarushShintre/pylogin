@@ -10,7 +10,7 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'some-secret-key'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://helmascaqbnjcy:d58ede02612842cf7f5f92ea352840187b8fe1217c2fffdae9b6acd7305a552b@ec2-34-233-115-14.compute-1.amazonaws.com:5432/dfumocahrfo52p'
     db.init_app(app)
 
     from .views import views
@@ -20,8 +20,6 @@ def create_app():
     app.register_blueprint(auth, url_prefix='/')
 
     from .models import User
-
-    create_database(app)
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
@@ -34,9 +32,3 @@ def create_app():
     return app
 
 
-
-
-def create_database(app):
-    if not path.exists('website/' + DB_NAME):
-        db.create_all(app=app)
-        print('Created Database!')
