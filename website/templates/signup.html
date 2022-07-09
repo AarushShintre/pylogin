@@ -2,18 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>SignUp</title>
+		<title>signup</title>
 		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
 	<body>
-		<div class="SignUp">
-			<h1>SignUp</h1>
+		<div class="signup">
+			<h1>Signup</h1>
 			<div class="links">
-				<a href="{{ url_for('login') }}">Login</a>
-				<a href="{{ url_for('SignUp') }}" class="active">SignUp</a>
+				<a href="{{ url_for('auth.login') }}">Login</a>
+				<a href="{{ url_for('auth.signup') }}" class="active">Signup</a>
 			</div>
-			<form action="{{ url_for('SignUp') }}" method="post" autocomplete="off">
+			<form action="{{ url_for('auth.signup') }}" method="post" autocomplete="off">
 				<label for="username">
 					<i class="fas fa-user"></i>
 				</label>
@@ -27,7 +27,7 @@
 				</label>
 				<input type="email" name="email" placeholder="Email" id="email" required>
 				<div class="msg">{{ msg }}</div>
-				<input type="submit" value="SignUp">
+				<input type="submit" value="signup">
 			</form>
 		</div>
 	</body>

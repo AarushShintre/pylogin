@@ -4,7 +4,7 @@ once in the project directory, run the following
 first, install packages listed in requirements.txt by
 
 
-set FLASK_APP=main.py
+set FLASK_APP=app.py
 set FLASK_DEBUG=1
 flask run
 
