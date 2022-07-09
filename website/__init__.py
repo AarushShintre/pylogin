@@ -4,8 +4,6 @@ from os import path
 from flask_login import LoginManager
 import psycopg2
 
-DB_NAME = "database.db"
-
 db = SQLAlchemy()
 
 app = Flask(__name__)
@@ -36,6 +34,5 @@ def load_user(id):
 with app.app_context():
     db.create_all()
 
-
-
-
+if __name__ == "__main__":
+        app.run()
